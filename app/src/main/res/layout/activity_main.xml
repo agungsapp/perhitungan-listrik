@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    tools:context="MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/pln"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Mulai SBL"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextTanggalMulaiSBL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan tanggal Mulai SBL"
+        android:textColorHint="#808080"
+        android:backgroundTint="#0000FF"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Selesai SBL"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextTanggalSelesaiSBL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan tanggal Selesai SBL"
+        android:textColorHint="#808080"
+        android:backgroundTint="#0000FF"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pemakaian Rata-rata (kWh)"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextPemakaianRataRata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan pemakaian rata-rata"
+        android:textColorHint="#808080"
+        android:backgroundTint="#0000FF"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+
+    <TextView
+        android:id="@+id/textViewSisaPulsa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sisa Pulsa :"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextSisaPulsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan sisa pulsa"
+        android:textColorHint="#808080"
+        android:backgroundTint="#0000FF"
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/buttonHitung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hitung"
+        android:textColor="#FFFFFF"
+        android:background="#0000FF"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewHasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewTagihan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tagihan :" />
+
+    <TextView
+        android:id="@+id/textViewTotalTagihan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Tagihan :"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"/>
+
+
+
+</LinearLayout>
