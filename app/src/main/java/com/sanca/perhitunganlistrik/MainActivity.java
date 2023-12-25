@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         edt_TanggalSelesaiSBL.setOnClickListener(v -> showDatePickerDialog(edt_TanggalSelesaiSBL));
 
         btn_Hitung.setOnClickListener(v -> {
-            String strTanggalMulaiSBL = edt_TanggalMulaiSBL.getText().toString();
-            String strTanggalSelesaiSBL = edt_TanggalSelesaiSBL.getText().toString();
-            String strPemakaianRataRata = edt_PemakaianRataRata.getText().toString();
-            String strSisaPulsa = edt_SisaPulsa.getText().toString();
+            String strTanggalMulaiSBL = edt_TanggalMulaiSBL.getText().toString(); // inputan user : 01/12/12
+            String strTanggalSelesaiSBL = edt_TanggalSelesaiSBL.getText().toString(); // inputan user : 09/12/12
+            String strPemakaianRataRata = edt_PemakaianRataRata.getText().toString(); //inputan user :  370
+            String strSisaPulsa = edt_SisaPulsa.getText().toString(); //inputan user :  33.20
 
             if (strTanggalMulaiSBL.isEmpty() || strTanggalSelesaiSBL.isEmpty() || strPemakaianRataRata.isEmpty() || strSisaPulsa.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Semua input harus diisi", Toast.LENGTH_SHORT).show();
@@ -70,17 +70,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
             long selisihMS = Math.abs(TanggalSelesaiSBL.getTime() - TanggalMulaiSBL.getTime());
-            long selisihHari = selisihMS / (24 * 60 * 60 * 1000);
+            long selisihHari = selisihMS / (24 * 60 * 60 * 1000); // hasil yang diharapkan :  9 hari
 
 
 
 
+// Menghitung pemakaian per hari dan membulatkan ke bawah
             DecimalFormat decimalFormat = new DecimalFormat("#.#");
             decimalFormat.setRoundingMode(RoundingMode.DOWN);
             double pemakaianPerHari = Double.parseDouble(decimalFormat.format(PemakaianRataRata / 30));
 
-            double hasil = selisihHari * pemakaianPerHari;
-            double totalTagihan = SisaPulsa - hasil;
+// Menghitung total SBL
+            double totalSBL = pemakaianPerHari * selisihHari;
+
+// Hitung total tagihan
+            double totalTagihan = SisaPulsa - totalSBL;
+
+
+
+
+
+
 
             Locale localeID = new Locale("in", "ID");
             NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
@@ -91,12 +101,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d("COBA", "Pemakaian rata rata : " + PemakaianRataRata);
             Log.d("COBA", "Pemakaian rata rata / hari : " + pemakaianPerHari);
             Log.d("COBA", "Sisa Pulsa : " + SisaPulsa);
-            Log.d("COBA", "Total SBL: " + hasil);
+            Log.d("COBA", "Total SBL: " + totalSBL);
             Log.d("COBA", "Sisa Pulsa - (Permakaian rata rata / Hari) : " + totalTagihan);
 
             txtHasilTagihan.setText("Total Tagihan Susulan: " + totalTagihan);
-
-
 
         });
     }
