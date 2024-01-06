@@ -105,7 +105,18 @@
         android:layout_height="wrap_content"
         android:text="Hitung"
         android:textColor="#FFFFFF"
-        android:background="#0000FF"
+        android:backgroundTint="#0000FF"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#DC3545"
         android:padding="12dp"
         android:textSize="16sp"
         android:layout_marginBottom="16dp"/>

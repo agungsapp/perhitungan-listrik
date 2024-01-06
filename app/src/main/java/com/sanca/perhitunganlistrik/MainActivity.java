@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText edt_PemakaianRataRata;
     private EditText edt_SisaPulsa;
     private Button btn_Hitung;
+    private Button btn_reset;
     private TextView txtHasilTagihan;
 
     @Override
@@ -40,10 +41,20 @@ public class MainActivity extends AppCompatActivity {
         edt_PemakaianRataRata = findViewById(R.id.editTextPemakaianRataRata);
         edt_SisaPulsa = findViewById(R.id.editTextSisaPulsa);
         btn_Hitung = findViewById(R.id.buttonHitung);
+        btn_reset = findViewById(R.id.btn_reset);
         txtHasilTagihan = findViewById(R.id.textViewTotalTagihan);
 
         edt_TanggalMulaiSBL.setOnClickListener(v -> showDatePickerDialog(edt_TanggalMulaiSBL));
         edt_TanggalSelesaiSBL.setOnClickListener(v -> showDatePickerDialog(edt_TanggalSelesaiSBL));
+
+//       listener tombol reset
+        btn_reset.setOnClickListener(v -> {
+            edt_TanggalMulaiSBL.setText("");
+            edt_TanggalSelesaiSBL.setText("");
+            edt_PemakaianRataRata.setText("");
+            edt_SisaPulsa.setText("");
+            txtHasilTagihan.setText("");
+        });
 
         btn_Hitung.setOnClickListener(v -> {
             String strTanggalMulaiSBL = edt_TanggalMulaiSBL.getText().toString(); // inputan user : 01/12/12
